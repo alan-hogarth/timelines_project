@@ -54,15 +54,15 @@ const [description, setDescription] = useState("");
         <form onSubmit={handleEventSubmit}>
         <label>
           Name:
-          <Input size='small' name="newEvent" type="text" value={name} onChange={handleNameChange} />
+          <Input size='small' name="name" type="text" value={name} onChange={handleNameChange} />
         </label>
         <label>
           Date:
-          <Input size='small' name="newEvent" type="text"  value={date} onChange={handleDateChange} />
+          <Input size='small' name="date" type="text"  value={date} onChange={handleDateChange} />
         </label><br/>
         <label>
           Description:
-          <Input size='small' name="newEvent" type="text"  value={description} onChange={handleDescriptionChange}/>
+          <Input size='small' name="description" type="text"  value={description} onChange={handleDescriptionChange}/>
         </label>
         <label>
           Location: 

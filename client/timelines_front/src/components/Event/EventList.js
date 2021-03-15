@@ -12,7 +12,7 @@ const Eventlist = ({filteredEvents, deleteEntry}) => {
                 <>
                     {/* <Grid.Column> */}
                         
-                    <Event filteredEvent={object} key={index} deleteEntry={deleteEntry}/>
+                    <Event filteredEvent={object} key={index} deleteEntry={deleteEntry} />
                     {/* </List.Item> */}
                         
                     {/* </Grid.Column> */}

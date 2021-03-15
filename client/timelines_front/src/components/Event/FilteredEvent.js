@@ -1,5 +1,6 @@
 
 import { List, Button, Grid, Segment } from 'semantic-ui-react'
+
 const Event = ({filteredEvent, deleteEntry}) => {
 
     const deleteButton = () => {

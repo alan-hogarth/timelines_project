@@ -32,7 +32,7 @@ const EventContainer = () => {
         return fetch(`http://localhost:8080/events/${userId}`, {
             method: "DELETE"
         })
-    setEvents(events.filter(event => event.id !== userId));
+        setEvents(events.filter(event => event.id !== userId));
     }
 
 
@@ -51,7 +51,7 @@ return (
                 <Grid container columns={1} >
                     <Grid.Column>
                         {/* <Segment> */}
-                            <EventList filteredEvents = {eventFilter} deleteEntry={deleteEventEntry}/> 
+                            <EventList filteredEvents = {eventFilter} deleteEntry={deleteEventEntry} /> 
                         {/* </Segment> */}
                     </Grid.Column>
                 </Grid> 
