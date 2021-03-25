@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import LocationForm from "./LocationForm";
 import { Input } from 'semantic-ui-react';
 
-const EventForm = ({events, eventDetails, locations}) =>{
+const EventForm = ({events, setEvents, eventDetails, locations}) =>{
 
 const [name, setName] = useState("");
 const [date, setDate] = useState("");
@@ -19,7 +19,9 @@ const [description, setDescription] = useState("");
       location: {id: location}
     }
       eventDetails(eventObject)
+       
        console.log(eventObject);
+      //  setEvents(events)
   }
 
 

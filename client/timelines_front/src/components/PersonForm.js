@@ -10,7 +10,7 @@ const [deathDate, setDeathDate] = useState("");
 const [personEvents, setPersonEvents] = useState([]);
 
     const handlePersonSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
        
     const personObject = {
       name: name,
