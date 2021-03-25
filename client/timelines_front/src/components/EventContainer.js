@@ -28,10 +28,18 @@ const EventContainer = () => {
         setEventFilter(timelineDetails); 
         }
 
+    
+
+
     const deleteEventEntry = (userId) => {
         return fetch(`http://localhost:8080/events/${userId}`, {
             method: "DELETE"
         })
+    }
+
+    const handleDelete = userId => {
+        deleteEventEntry(userId);
+
         setEvents(events.filter(event => event.id !== userId));
     }
 
@@ -51,7 +59,7 @@ return (
                 <Grid container columns={1} >
                     <Grid.Column>
                         {/* <Segment> */}
-                            <EventList filteredEvents = {eventFilter} deleteEntry={deleteEventEntry} /> 
+                            <EventList filteredEvents = {eventFilter} deleteEntry={handleDelete} /> 
                         {/* </Segment> */}
                     </Grid.Column>
                 </Grid> 

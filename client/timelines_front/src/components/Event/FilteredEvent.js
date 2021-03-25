@@ -4,10 +4,11 @@ import {useState} from "react";
 
 const Event = ({filteredEvent, deleteEntry}) => {
 
-    
+
     const deleteButton = () => {
         deleteEntry(filteredEvent.id)
     }
+        
 
     return (
         <div>
