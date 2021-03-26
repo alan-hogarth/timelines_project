@@ -7,7 +7,7 @@ const NavBar = () => {
         history.goBack();
     }
     return (
-        <nav class="navbar">
+        <nav className="navbar">
             <li>
                 <Link className='navbar-link' to='/'>Home</Link>
             </li>

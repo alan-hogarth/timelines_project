@@ -31,16 +31,16 @@ const EventContainer = () => {
     
 
 
-    const deleteEventEntry = (userId) => {
-        return fetch(`http://localhost:8080/events/${userId}`, {
+    const deleteEventEntry = (Id) => {
+        return fetch(`http://localhost:8080/events/${Id}`, {
             method: "DELETE"
         })
     }
 
-    const handleDelete = userId => {
-        deleteEventEntry(userId);
+    const handleDelete = Id => {
+        deleteEventEntry(Id);
 
-        setEvents(events.filter(event => event.id !== userId));
+        setEvents(events.filter((event) => event.id !== Id), console.log(events));
     }
 
 
