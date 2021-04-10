@@ -2,13 +2,14 @@
 import { List, Button, Grid, Segment } from 'semantic-ui-react'
 import {useState} from "react";
 
+
 const Event = ({filteredEvent, deleteEntry}) => {
 
 
     const deleteButton = () => {
         deleteEntry(filteredEvent.id)
+        console.log(filteredEvent)
     }
-        
 
     return (
         <div>

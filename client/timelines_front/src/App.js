@@ -16,7 +16,7 @@ function App() {
     <PokedexHeader name={"Don, Fras and Al!"}/>
     <TimelineContainer/>
     
-    <EventContainer />
+    {/* <EventContainer /> */}
     </div>
     </>
   );
