@@ -82,7 +82,7 @@ const [personEvents, setPersonEvents] = useState([]);
 
         <label>
             Events:
-            <select onChange={handleEventsChange} value={personEvents} >
+            <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
             {eventNodes}</select>
         </label>
 

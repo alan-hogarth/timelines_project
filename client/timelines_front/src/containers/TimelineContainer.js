@@ -129,8 +129,11 @@ const deleteEventEntry = (Id) => {
 const handleDelete = Id => {
     deleteEventEntry(Id);
 
-    setEvents(events.filter(event => event.id !== Id));
+    // delete from event list
     setEventFilter(eventFilter.filter(e => e.id !== Id));
+    // delete from map 
+    setEvents(events.filter(event => event.id !== Id));
+   
 }
 
 const handleUserFilter = (userInput) => {
@@ -158,7 +161,6 @@ return (
 
         <div id="mainComponentCont">
             <Container style={{ padding: '3rem 0rem' }}>
-            {/* <Segment> */}
                 <Container text>
                 <Segment.Group>
                     <Segment raised>
@@ -194,12 +196,12 @@ return (
                 <Container >
                                     <Header as='h2' content='Events' textAlign='left'/>
                                     <FilterSearch onUserInput={handleUserFilter}/>
-                    <Grid container columns={1} >
-                        <Grid.Column>
+                        <Grid container columns={1} >
+                            <Grid.Column>
                         
                                     <EventList filteredEvents={eventFilter} deleteEntry={handleDelete} /> 
-                        </Grid.Column>
-                    </Grid> 
+                            </Grid.Column>
+                        </Grid> 
                 </Container>
                     
 
