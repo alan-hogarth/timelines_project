@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import { Input, Select } from 'semantic-ui-react';
+import { Input, Select, Dropdown } from 'semantic-ui-react';
 
 const PersonForm  = ({persons, events, personDetails}) => {
 
@@ -42,20 +42,38 @@ const [personEvents, setPersonEvents] = useState([]);
         setDeathDate(e.target.value)
       }
 
-    const eventNodes = events.map((event) => {
-      if (event) {
-        return (
-            <option value={event.id}>
-             {event.name}
-            </option>
-        )
-      }
-    })
+    // const eventNodes = events.map((event) => {
+    //   if (event) {
+    //     return (
+    //         <option value={event.id}>
+    //          {event.name}
+    //         </option>
+    //     )
+    //   }
+    // })
 
     const handleEventsChange = (e) => {
         setPersonEvents(e.target.value)
         
       }
+
+      const DropdownSelection = () => (
+          <Dropdown
+            placeholder='Select Event'
+            fluid
+            selection
+            onChange={handleEventsChange}  
+            options={events.map((event) => {
+              if (event) {
+                return{
+                  key: event.name,
+                  text: event.name,
+                  value: event.id,
+                }
+              }
+             
+            })}/>
+        )
 
     return (
         <form onSubmit={handlePersonSubmit}>
@@ -82,8 +100,9 @@ const [personEvents, setPersonEvents] = useState([]);
 
         <label>
             Events:
-            <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
-            {eventNodes}</select>
+            {DropdownSelection()}
+            {/* <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
+            {eventNodes}</select> */}
         </label>
 
         <Input type="submit" value="Submit" />
