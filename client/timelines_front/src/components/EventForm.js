@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import LocationForm from "./LocationForm";
-import { Form, Input, Select } from 'semantic-ui-react';
+import { Form, Input, Select, Dropdown, Menu } from 'semantic-ui-react';
 
 const EventForm = ({events, setEvents, eventDetails, locations}) =>{
 
@@ -42,15 +42,34 @@ const [description, setDescription] = useState("");
       setDescription(e.target.value)
     }
 
-    const locationNodes = locations.map((location) => {
-      if (location) {
-        return (
-        <option value={location.id}>
-        {location.name}
-        </option>
-        )
-      }
-    });
+    // const locationNodes = locations.map((location) => {
+    //   if (location) {
+    //     return(
+    //       <option
+    //         value={location.id}>
+    //         {location.name}
+    //       </option>
+    //      )
+    //   }
+    // });
+
+    const DropdownSelection = () => (
+      <Dropdown
+        placeholder='Select Location'
+        fluid
+        selection
+        onChange={handleLocationSelect}  
+        options={locations.map((location) => {
+          if (location) {
+            return{
+              key: location.name,
+              text: location.name,
+              value: location.id
+              
+            }
+          }
+        })}/>
+    )
 
     return (
       <form onSubmit={handleEventSubmit}>
@@ -71,9 +90,8 @@ const [description, setDescription] = useState("");
         </label>
 
         <label>
-          Location: 
-          <select onChange={handleLocationSelect}>
-          {locationNodes}</select>
+          Location:
+          {DropdownSelection()}
         </label>
 
         <Input type="submit" value="Submit" />
