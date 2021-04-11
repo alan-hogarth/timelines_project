@@ -9,14 +9,8 @@ const Eventlist = ({filteredEvents, deleteEntry}) => {
 
         const eventNodes = filteredEvents.map((object, index) => {
             return (
-                <>
-                    {/* <Grid.Column> */}
-                        
+                <> 
                     <Event filteredEvent={object} key={index} deleteEntry={deleteEntry} />
-                    {/* </List.Item> */}
-                        
-                    {/* </Grid.Column> */}
-
                 </>
                 
             );

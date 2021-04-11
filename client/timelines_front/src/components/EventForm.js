@@ -56,8 +56,7 @@ const [description, setDescription] = useState("");
       <Select
         placeholder='Select Location'
         fluid
-        selection
-        
+        selection       
         onChange={handleLocationSelect}  
         options={locations.map((location) => {
             return{
