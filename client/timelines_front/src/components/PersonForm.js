@@ -42,15 +42,15 @@ const [personEvents, setPersonEvents] = useState([]);
         setDeathDate(e.target.value)
       }
 
-    // const eventNodes = events.map((event) => {
-    //   if (event) {
-    //     return (
-    //         <option value={event.id}>
-    //          {event.name}
-    //         </option>
-    //     )
-    //   }
-    // })
+    const eventNodes = events.map((event) => {
+      if (event) {
+        return (
+            <option value={event.id}>
+             {event.name}
+            </option>
+        )
+      }
+    })
 
     const handleEventsChange = (e) => {
         setPersonEvents(e.target.value)
@@ -100,7 +100,7 @@ const [personEvents, setPersonEvents] = useState([]);
 
         <label>
             Events:
-            <Dropdown
+            {/* <Dropdown
             placeholder='Select Event'
             fluid
             value={handleEventsChange}
@@ -114,9 +114,9 @@ const [personEvents, setPersonEvents] = useState([]);
                   value: event.id
                 }
               } 
-            })}/>
-            {/* <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
-            {eventNodes}</select> */}
+            })}/> */}
+            <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
+            {eventNodes}</select>
         </label>
 
         <Input type="submit" value="Submit" />

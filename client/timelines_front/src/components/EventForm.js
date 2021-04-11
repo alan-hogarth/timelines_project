@@ -33,42 +33,44 @@ const [description, setDescription] = useState("");
       setDate(e.target.value)
     }
     
-    const handleLocationSelect = (e) => {
-      setLocation(e.target.value)
+    const handleLocationSelect = (e, {value}) => {
+      setLocation(value)
     }
 
     const handleDescriptionChange = (e) => {
       setDescription(e.target.value)
     }
 
-    const locationNodes = locations.map((location) => {
-      if (location) {
-        return(
-          <option
-            value={location.id}>
-            {location.name}
-          </option>
-         )
-      }
-    });
+    // const locationNodes = locations.map((location) => {
+    //   if (location) {
+    //     return(
+    //       <option
+    //         value={location.id}>
+    //         {location.name}
+    //       </option>
+    //      )
+    //   }
+    // });
 
-    // const DropdownSelection = () => (
-    //   <Dropdown
-    //     placeholder='Select Location'
-    //     fluid
-    //     selection
-    //     onChange={handleLocationSelect}  
-    //     options={locations.map((location) => {
-    //       if (location) {
-    //         return{
-    //           key: location.name,
-    //           text: location.name,
-    //           value: location.id,
-    //         }
-    //       }
+    const DropdownSelection = () => (
+      <Select
+        placeholder='Select Location'
+        fluid
+        selection
+        
+        onChange={handleLocationSelect}  
+        options={locations.map((location) => {
+          
+            return{
+              name: location.id,
+              key: location.name,
+              text: location.name,
+              value: location.id,
+            }
+          
          
-    //     })}/>
-    // )
+        })}/>
+    )
 
     return (
       <form onSubmit={handleEventSubmit}>
@@ -90,7 +92,8 @@ const [description, setDescription] = useState("");
 
         <label>
           Location:
-          <select onChange={handleLocationSelect}  >{locationNodes}</select>
+          {DropdownSelection()}
+          {/* <select onChange={handleLocationSelect}  >{locationNodes}</select> */}
         </label>
 
         <Input type="submit" value="Submit" />
