@@ -42,38 +42,39 @@ const [personEvents, setPersonEvents] = useState([]);
         setDeathDate(e.target.value)
       }
 
-    const eventNodes = events.map((event) => {
-      if (event) {
-        return (
-            <option value={event.id}>
-             {event.name}
-            </option>
-        )
-      }
-    })
+    // const eventNodes = events.map((event) => {
+    //   if (event) {
+    //     return (
+    //         <option value={event.id}>
+    //          {event.name}
+    //         </option>
+    //     )
+    //   }
+    // })
 
-    const handleEventsChange = (e) => {
-        setPersonEvents(e.target.value)
+    const handleEventsChange = (e, {value}) => {
+        setPersonEvents(value)
         
       }
 
-      // const DropdownSelection = () => (
-      //     <Dropdown
-      //       placeholder='Select Event'
-      //       fluid
-      //       selection
-      //       onChange={handleEventsChange}  
-      //       options={events.map((event) => {
-      //         if (event) {
-      //           return{
-      //             key: event.name,
-      //             text: event.name,
-      //             value: event.id,
-      //           }
-      //         }
+      const DropdownSelection = () => (
+          <Select
+            placeholder='Select Event'
+            fluid
+            selection
+            onChange={handleEventsChange}  
+            options={events.map((event) => {
+              if (event) {
+                return{
+                  name: event.id,
+                  key: event.name,
+                  text: event.name,
+                  value: event.id,
+                }
+              }
              
-      //       })}/>
-      //   )
+            })}/>
+        )
 
     return (
         <form onSubmit={handlePersonSubmit}>
@@ -100,23 +101,9 @@ const [personEvents, setPersonEvents] = useState([]);
 
         <label>
             Events:
-            {/* <Dropdown
-            placeholder='Select Event'
-            fluid
-            value={handleEventsChange}
-            selection
-            onChange={handleEventsChange}  
-            options={events.map((event) => {
-              if (event) {
-                return{
-                  key: event.id,
-                  text: event.name,
-                  value: event.id
-                }
-              } 
-            })}/> */}
-            <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
-            {eventNodes}</select>
+            {DropdownSelection()}
+            {/* <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
+            {eventNodes}</select> */}
         </label>
 
         <Input type="submit" value="Submit" />

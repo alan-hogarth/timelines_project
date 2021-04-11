@@ -60,15 +60,12 @@ const [description, setDescription] = useState("");
         
         onChange={handleLocationSelect}  
         options={locations.map((location) => {
-          
             return{
               name: location.id,
               key: location.name,
               text: location.name,
               value: location.id,
-            }
-          
-         
+            }                  
         })}/>
     )
 
