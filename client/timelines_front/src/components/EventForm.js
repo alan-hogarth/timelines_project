@@ -35,7 +35,6 @@ const [description, setDescription] = useState("");
     
     const handleLocationSelect = (e) => {
       setLocation(e.target.value)
-      console.log(location)
     }
 
     const handleDescriptionChange = (e) => {
