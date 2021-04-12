@@ -13,7 +13,7 @@ function App() {
     <>
    
     <div className="pageContainer">
-    <PokedexHeader name={"Visualise and Plot the Past"}/>
+    <PokedexHeader name={"Visualise the Past"}/>
     <TimelineContainer/>
     
     {/* <EventContainer /> */}
