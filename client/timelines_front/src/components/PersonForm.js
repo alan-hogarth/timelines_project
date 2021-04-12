@@ -102,8 +102,7 @@ const [personEvents, setPersonEvents] = useState([]);
         <label>
             Events:
             {DropdownSelection()}
-            {/* <select placeholder="select event" onChange={handleEventsChange} value={personEvents}>
-            {eventNodes}</select> */}
+        
         </label>
 
         <Input type="submit" value="Submit" />
