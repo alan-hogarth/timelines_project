@@ -22,7 +22,7 @@ const TimelinePage = ({events, persons, personDetails, viewPersonDetails}) => {
                 // make the list of people button show up
 
               
-                function ModalExampleModal() {
+                function ModalPersons() {
                     const [open, setOpen] = useState(false)
                   
                     return (
@@ -81,7 +81,7 @@ const TimelinePage = ({events, persons, personDetails, viewPersonDetails}) => {
                         <p id="description">{event.description} </p>
                         {/* <button onClick={renderPersonDetails()}>People</button>  */}
                         {/* this should have a popup for a list of people at the event */}
-                        {ModalExampleModal()}
+                        {ModalPersons()}
                     </VerticalTimelineElement>
                     );
                 })
