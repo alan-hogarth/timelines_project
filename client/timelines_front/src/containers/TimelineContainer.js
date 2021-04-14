@@ -17,6 +17,7 @@ const TimelineContainer = () => {
 
 const [events, setEvents] = useState([]);
 const [persons, setPersons] = useState([]);
+const [personDetails, setPersonDetails] = useState(null);
 const [locations, setLocations] = useState([]);
 const [eventDetails, setEventDetails] = useState(null);
 const [eventFilter, setEventFilter] = useState([])
@@ -68,6 +69,20 @@ const viewEventDetails = idToView => {
     })
  }
 
+ const getPersonDetails = (id)=>{
+
+    return fetch(`http://localhost:8080/persons/${id}`)
+   .then(res => res.json())
+}
+
+const viewPersonDetails = id => {
+   
+   getPersonDetails(id)
+   .then((data) => {
+       console.log(data)
+       setPersonDetails(data)
+   })
+}
 
  const addEventDetails = (data)=>{ 
      
@@ -155,7 +170,7 @@ return (
     <Router>
       <NavBar/>
         <Switch>
-          <Route path="/timeline" exact render={()=> <TimelinePage events={events}/>}/>
+          <Route path="/timeline" exact render={()=> <TimelinePage events={events} persons={persons} personDetails={eventDetails} viewPersonDetails={viewEventDetails}/>}/>
         </Switch>
     </Router>
 

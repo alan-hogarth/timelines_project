@@ -1,6 +1,7 @@
 const Person = ({person}) => {
 
 
+
     return (
         <div>
             <p>{person.name}</p>
