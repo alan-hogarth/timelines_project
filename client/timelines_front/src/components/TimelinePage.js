@@ -32,8 +32,9 @@ const TimelinePage = ({events, persons, personDetails, viewPersonDetails}) => {
                         open={open}
                         trigger={<Button>Show People</Button>}
                       >
-                        <Modal.Header>Historical Persons</Modal.Header>
+                        <Modal.Header>{event.name}</Modal.Header>
                         <Modal.Content image>
+                        <Image size='large' src='https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80' wrapped />
                           <Modal.Description>
                             <Header>Participants</Header>
                             <p>
