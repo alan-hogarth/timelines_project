@@ -17,7 +17,7 @@ const TimelineContainer = () => {
 
 const [events, setEvents] = useState([]);
 const [persons, setPersons] = useState([]);
-// const [personDetails, setPersonDetails] = useState(null);
+const [personDetails, setPersonDetails] = useState([]);
 const [locations, setLocations] = useState([]);
 const [eventDetails, setEventDetails] = useState(null);
 const [eventFilter, setEventFilter] = useState([])
@@ -30,6 +30,7 @@ const fetchEvents = () => {
     .then((data) => {
       setEvents(data)  
       setEventFilter(data)
+      setPersonDetails(data)
     })
 }
 
@@ -149,7 +150,6 @@ const handleDelete = Id => {
     // delete from map 
     setEvents(events.filter(event => event.id !== Id));
 
-    setPersons(persons.filter(person => person.id !== Id));
     
 }
 
@@ -172,7 +172,7 @@ return (
     <Router>
       <NavBar/>
         <Switch>
-          <Route path="/timeline" exact render={()=> <TimelinePage events={events} persons={persons} personDetails={eventDetails} viewPersonDetails={viewEventDetails}/>}/>
+          <Route path="/timeline" exact render={()=> <TimelinePage personDetails={personDetails} />}/>
         </Switch>
     </Router>
 
