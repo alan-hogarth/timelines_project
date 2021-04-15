@@ -17,7 +17,7 @@ const TimelineContainer = () => {
 
 const [events, setEvents] = useState([]);
 const [persons, setPersons] = useState([]);
-const [personDetails, setPersonDetails] = useState(null);
+// const [personDetails, setPersonDetails] = useState(null);
 const [locations, setLocations] = useState([]);
 const [eventDetails, setEventDetails] = useState(null);
 const [eventFilter, setEventFilter] = useState([])
@@ -69,20 +69,20 @@ const viewEventDetails = idToView => {
     })
  }
 
- const getPersonDetails = (id)=>{
+//  const getPersonDetails = (id)=>{
 
-    return fetch(`http://localhost:8080/persons/${id}`)
-   .then(res => res.json())
-}
+//     return fetch(`http://localhost:8080/persons/${id}`)
+//    .then(res => res.json())
+// }
 
-const viewPersonDetails = id => {
+// const viewPersonDetails = id => {
    
-   getPersonDetails(id)
-   .then((data) => {
-       console.log(data)
-       setPersonDetails(data)
-   })
-}
+//    getPersonDetails(id)
+//    .then((data) => {
+//        console.log(data)
+//        setPersonDetails(data)
+//    })
+// }
 
  const addEventDetails = (data)=>{ 
      
@@ -148,6 +148,8 @@ const handleDelete = Id => {
     setEventFilter(eventFilter.filter(e => e.id !== Id));
     // delete from map 
     setEvents(events.filter(event => event.id !== Id));
+
+    setPersons(persons.filter(person => person.id !== Id));
     
 }
 
