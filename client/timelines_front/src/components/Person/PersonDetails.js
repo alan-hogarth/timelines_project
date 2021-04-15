@@ -9,8 +9,8 @@ const PersonDetails = ({eventPeople}) => {
 
     const handleEventPersons = eventPeople.persons.map((currentPerson) => {
         if(currentPerson){
-            console.log(currentPerson)
-        return (
+
+            return (
             <ul>
                     <li>Name: {currentPerson.name}</li>
                     <li>Nationality: {currentPerson.nationality}</li>  
@@ -39,10 +39,10 @@ const PersonDetails = ({eventPeople}) => {
                     <p id="description">{eventPeople.description}</p>
         
                         <Modal
-                        onClose={()=>setOpen(false)}
-                        onOpen={()=>setOpen(true)}
-                        open={open}
-                        trigger={<Button>Show People</Button>}
+                            onClose={()=>setOpen(false)}
+                            onOpen={()=>setOpen(true)}
+                            open={open}
+                            trigger={<Button>Show People</Button>}
                         >
                             <Modal.Header>{eventPeople.name}</Modal.Header>
                                 <Modal.Content image>
@@ -67,7 +67,7 @@ const PersonDetails = ({eventPeople}) => {
                             
                                 /> 
                             </Modal.Actions>
-                    </Modal> 
+                        </Modal> 
             </VerticalTimelineElement>
     </VerticalTimeline>
     );
