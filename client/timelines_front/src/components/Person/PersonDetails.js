@@ -32,8 +32,10 @@ const PersonDetails = ({eventPeople}) => {
                     key={eventPeople.key}
                     date={eventPeople.date}
                     dateClassName="date"
-                    icon={''}
+                    iconStyle={{ background: 'black', color: 'white'}}
+                    icon={<div className="chessKing"><i class="chess king icon"></i></div>}
                 >
+                    <i class="chess knight icon"></i><br/>
                     <h3 className="vertical-timeline-element-title">{eventPeople.name}</h3>
                     <h4 className="vertical-timeline-element-subtitle">{eventPeople.location.name}</h4>
                     <p id="description">{eventPeople.description}</p>

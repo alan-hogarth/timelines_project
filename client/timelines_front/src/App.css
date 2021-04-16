@@ -60,3 +60,11 @@
     transform: rotate(360deg);
   }
 }
+
+.chessKing {
+  align-items: center;
+  justify-content: center;
+  padding: 21px;
+}
+
+

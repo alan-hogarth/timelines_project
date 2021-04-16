@@ -14,9 +14,6 @@ const Event = ({filteredEvent, deleteEntry, setEventDetails}) => {
 
     return (
         <div>
-        
-        {/* <Grid.Column> */}
-        {/* <Grid container columns={2}> */}
             <Segment>
                 <List.Content>
                     <List.Icon name='chess knight' />
@@ -30,9 +27,6 @@ const Event = ({filteredEvent, deleteEntry, setEventDetails}) => {
 
                 </List.Content>
             </Segment>
-        {/* </Grid> */}
-
-        {/* </Grid.Column> */}
         
         </div>
         
