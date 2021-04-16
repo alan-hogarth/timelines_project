@@ -11,8 +11,8 @@ const PersonDetails = ({eventPeople}) => {
         if(currentPerson){
 
             return (
-            <ul>
-                    <li>Name: {currentPerson.name}</li>
+                <ul>
+                    <h4>{currentPerson.name}</h4>
                     <li>Nationality: {currentPerson.nationality}</li>  
                     <li>Birth: {currentPerson.birthDate}</li>
                     <li>Death: {currentPerson.deathDate}</li>  
@@ -35,7 +35,7 @@ const PersonDetails = ({eventPeople}) => {
                     icon={''}
                 >
                     <h3 className="vertical-timeline-element-title">{eventPeople.name}</h3>
-                    <h5 className="vertical-timeline-element-subtitle">{eventPeople.location.name}</h5>
+                    <h4 className="vertical-timeline-element-subtitle">{eventPeople.location.name}</h4>
                     <p id="description">{eventPeople.description}</p>
         
                         <Modal
