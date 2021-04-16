@@ -1,5 +1,5 @@
 
-const EventDetails = ({eventDetails, events}) => {
+const EventDetails = ({eventDetails}) => {
 
     const handleEventPersons = eventDetails.persons.map((currentPerson, index) => {
         return ( <li>{currentPerson.name}</li> 

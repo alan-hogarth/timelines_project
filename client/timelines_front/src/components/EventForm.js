@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import LocationForm from "./LocationForm";
 import { Form, Input, Select, Dropdown, Menu } from 'semantic-ui-react';
 
-const EventForm = ({events, setEvents, eventDetails, locations}) =>{
+const EventForm = ({eventDetails, locations}) =>{
 
 const [name, setName] = useState("");
 const [date, setDate] = useState("");

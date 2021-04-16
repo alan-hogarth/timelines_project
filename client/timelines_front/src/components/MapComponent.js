@@ -6,7 +6,7 @@ import L from 'leaflet';
 import {Segment, Header, Grid} from 'semantic-ui-react';
 import { MapContainer, TileLayer, Marker, Popup, LayersControl} from 'react-leaflet';
 
-const MapComponent = ({events, locations, persons, viewEventDetails, eventDetails}) => {
+const MapComponent = ({events, viewEventDetails, eventDetails}) => {
 
     const [currentLocation, setCurrentLocation] = useState({ lat: 53.4084, lng: -2.9916 });
     const [zoom, setZoom] = useState(5);
@@ -15,7 +15,7 @@ const MapComponent = ({events, locations, persons, viewEventDetails, eventDetail
         iconSize: [32, 32] 
       });
 
-    if (!events || !locations || !persons){
+    if (!events){
         return <span>SOMETHING AINT RIGHT</span>;
     }
 

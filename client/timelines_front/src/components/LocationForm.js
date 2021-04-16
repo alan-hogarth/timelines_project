@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import { Input, Select } from 'semantic-ui-react';
 
-const LocationForm = ({locations, locationDetails}) => {
+const LocationForm = ({locationDetails}) => {
 
 const [name, setName] = useState("");
 const [latitude, setLatitude] = useState(0.00);

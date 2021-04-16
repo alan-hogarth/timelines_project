@@ -151,6 +151,7 @@ const handleDelete = Id => {
     setEvents(events.filter(event => event.id !== Id));
     // delete from timeline
     setPersonDetails(events.filter(event => event.id !==Id));
+
 }
 
 const handleUserFilter = (userInput) => {
@@ -189,11 +190,11 @@ return (
                         <Grid.Row columns={3}>
                             <Grid.Column>
                                         <Header as='h3'>New Location</Header>
-                                        <LocationForm locations={locations} locationDetails={addLocationDetails} setLocations={setLocations}/>                             
+                                        <LocationForm locationDetails={addLocationDetails} setLocations={setLocations}/>                             
                             </Grid.Column>
                             <Grid.Column>                   
                                         <Header as='h3'>New Event</Header>
-                                        <EventForm locations={locations} events={events} eventDetails={addEventDetails} setEvents={setEvents}/>
+                                        <EventForm locations={locations} eventDetails={addEventDetails} />
                             </Grid.Column>
                             <Grid.Column>
                                         <Header as='h3'>New Participant</Header>
@@ -207,7 +208,7 @@ return (
                 </Container>  
                 <Container>
                                     <Segment>
-                                        <MapComponent viewEventDetails={viewEventDetails} events={events} locations={locations} persons={persons} eventDetails={eventDetails} newEvent={addEventDetails}/>
+                                        <MapComponent viewEventDetails={viewEventDetails} events={events} eventDetails={eventDetails} newEvent={addEventDetails}/>
                                     </Segment>
                 </Container>
                 <Container >
@@ -216,7 +217,7 @@ return (
                         <Grid container columns={1} >
                             <Grid.Column>
                         
-                                    <EventList filteredEvents={eventFilter} deleteEntry={handleDelete} /> 
+                                    <EventList filteredEvents={eventFilter} deleteEntry={handleDelete} setEventDetails={setEventDetails}/> 
                             </Grid.Column>
                         </Grid> 
                 </Container>
