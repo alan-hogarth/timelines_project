@@ -35,7 +35,7 @@ const PersonDetails = ({eventPeople}) => {
                     iconStyle={{ background: 'black', color: 'white'}}
                     icon={<div className="chessKing"><i class="chess king icon"></i></div>}
                 >
-                    <i class="chess knight icon"></i><br/>
+                    
                     <h3 className="vertical-timeline-element-title">{eventPeople.name}</h3>
                     <h4 className="vertical-timeline-element-subtitle">{eventPeople.location.name}</h4>
                     <p id="description">{eventPeople.description}</p>
@@ -50,7 +50,10 @@ const PersonDetails = ({eventPeople}) => {
                                 <Modal.Content image>
                                 <Image size='large' src='https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80' wrapped />
                                     <Modal.Description>
-                                        <Header>Participants</Header>
+                                        <Header>
+                                        <i class="chess knight icon"></i>
+                                            Participants
+                                        </Header>
                                         <p>
                                             {handleEventPersons}
                                         </p>
