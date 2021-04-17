@@ -21,7 +21,7 @@ const MapComponent = ({events, viewEventDetails, eventDetails}) => {
 
         const eventMarker = events.map((currentEvent, index)=>{
             return (
-                <Marker key={index} position={[currentEvent.location.latitude, currentEvent.location.longitude]} icon={markerIcon} >
+                <Marker icon={markerIcon} key={index} position={[currentEvent.location.latitude, currentEvent.location.longitude]} >
                 <Popup>
                     <Event
                     event={currentEvent}

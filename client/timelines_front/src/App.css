@@ -62,9 +62,13 @@
 }
 
 .chessKing {
+  /* padding: 21px; */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 21px;
+  justify-items: center;
+  height: 100%;
 }
 
 
