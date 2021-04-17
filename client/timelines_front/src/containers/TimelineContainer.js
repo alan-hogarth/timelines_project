@@ -144,11 +144,11 @@ const deleteEventEntry = (Id) => {
 
 const handleDelete = Id => {
     deleteEventEntry(Id);
+   
+    // delete from event list  // delete from map 
 
-    // delete from event list
-    setEventFilter(eventFilter.filter(e => e.id !== Id));
-    // delete from map 
-    setEvents(events.filter(event => event.id !== Id));
+    setEventFilter(eventFilter.filter(e => e.id !== Id), setEvents(events.filter(event => event.id !== Id)));
+   
     // delete from timeline
     setPersonDetails(events.filter(event => event.id !==Id));
 
