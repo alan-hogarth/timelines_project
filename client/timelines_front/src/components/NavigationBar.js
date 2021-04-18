@@ -6,18 +6,23 @@ const NavBar = () => {
     const back = () => {
         history.goBack();
     }
+
+
     return (
+        <div class="ui breadcrumb">
         <nav className="navbar">
-            <li>
+            <a class section>
                 <Link className='navbar-link' to='/'>Home</Link>
-            </li>
-            <li>
+            </a>
+            <div class='divider'> / </div>
+            <a class="section">
                 <Link className='navbar-link' to='/timeline'>Timeline</Link>
-            </li>
+            </a>
             {/* <li>
                 <Link className='navbar-link' to='/ww1map'>World War One Map</Link>
             </li> */}
         </nav>
+        </div>
     )
 }
 
