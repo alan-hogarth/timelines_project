@@ -19,10 +19,10 @@ const Event = ({filteredEvent, deleteEntry, setEventDetails}) => {
                     <List.Icon name='chess knight' />
 
                         <List.Header as='h3'>{filteredEvent.name}</List.Header>
-                        <List.Content floated="right">{filteredEvent.date}</List.Content>
+                        <List.Content floated="right">{filteredEvent.date}: </List.Content>
                         <List.Description>
                         {filteredEvent.description}
-                        </List.Description>
+                        </List.Description><br></br>
                             <Button secondary onClick={deleteButton}>Delete Event</Button>
 
                 </List.Content>

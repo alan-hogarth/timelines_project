@@ -14,7 +14,7 @@ const NavBar = () => {
             <a class section>
                 <Link className='navbar-link' to='/'>Home</Link>
             </a>
-            <div class='divider'> / </div>
+            <div className='divider'> / </div>
             <a class="section">
                 <Link className='navbar-link' to='/timeline'>Timeline</Link>
             </a>

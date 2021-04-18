@@ -180,37 +180,37 @@ return (
         <div id="mainComponentCont">
             <Container style={{ padding: '3rem 0rem' }}>
                 <Container text>
-                <Segment.Group>
-                    <Segment raised>
-                        <Header as='h2'>Enter some historical details</Header>
-                    </Segment>
-                    <Segment raised>
-                        <Grid divided>
-                            
-                        <Grid.Row columns={3}>
-                            <Grid.Column>
-                                        <Header as='h3'>New Location</Header>
-                                        <LocationForm locationDetails={addLocationDetails} setLocations={setLocations}/>                             
-                            </Grid.Column>
-                            <Grid.Column>                   
-                                        <Header as='h3'>New Event</Header>
-                                        <EventForm locations={locations} eventDetails={addEventDetails} />
-                            </Grid.Column>
-                            <Grid.Column>
-                                        <Header as='h3'>New Participant</Header>
-                                        <PersonForm persons={persons} events={events} personDetails={addPersonDetails} />                     
-                            </Grid.Column>
-                        </Grid.Row>                      
-                        </Grid>
-                    </Segment>
-                </Segment.Group>
+                    <Segment.Group>
+                        <Segment raised>
+                            <Header as='h2'>Enter some historical details</Header>
+                        </Segment>
+                        <Segment raised>
+                            <Grid divided>
+                                
+                            <Grid.Row columns={3}>
+                                <Grid.Column>
+                                            <Header as='h3'>New Location</Header>
+                                            <LocationForm locationDetails={addLocationDetails} setLocations={setLocations}/>                             
+                                </Grid.Column>
+                                <Grid.Column>                   
+                                            <Header as='h3'>New Event</Header>
+                                            <EventForm locations={locations} eventDetails={addEventDetails} />
+                                </Grid.Column>
+                                <Grid.Column>
+                                            <Header as='h3'>New Participant</Header>
+                                            <PersonForm persons={persons} events={events} personDetails={addPersonDetails} />                     
+                                </Grid.Column>
+                            </Grid.Row>                      
+                            </Grid>
+                        </Segment>
+                    </Segment.Group>
                 </Container>   
-                </Container>  
+            </Container>
                 <Container>
                                     <Segment>
                                         <MapComponent viewEventDetails={viewEventDetails} events={events} eventDetails={eventDetails} newEvent={addEventDetails}/>
                                     </Segment>
-                </Container>
+                </Container><br></br>
                 <Container >
                                     <Header as='h2' content='Events' textAlign='left'/>
                                     <FilterSearch onUserInput={handleUserFilter}/>
@@ -220,7 +220,7 @@ return (
                                     <EventList filteredEvents={eventFilter} deleteEntry={handleDelete} setEventDetails={setEventDetails}/> 
                             </Grid.Column>
                         </Grid> 
-                </Container>
+            </Container>
                     
 
         </div>
