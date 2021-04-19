@@ -10,6 +10,7 @@ const MapComponent = ({events, viewEventDetails, eventDetails}) => {
 
     const [currentLocation, setCurrentLocation] = useState({ lat: 53.4084, lng: -2.9916 });
     const [zoom, setZoom] = useState(5);
+    
     const markerIcon = L.icon({  
         iconUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Muskets.svg/1488px-Muskets.svg.png", 
         iconSize: [32, 32] 

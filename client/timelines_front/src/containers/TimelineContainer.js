@@ -70,21 +70,6 @@ const viewEventDetails = idToView => {
     })
  }
 
-//  const getPersonDetails = (id)=>{
-
-//     return fetch(`http://localhost:8080/persons/${id}`)
-//    .then(res => res.json())
-// }
-
-// const viewPersonDetails = id => {
-   
-//    getPersonDetails(id)
-//    .then((data) => {
-//        console.log(data)
-//        setPersonDetails(data)
-//    })
-// }
-
  const addEventDetails = (data)=>{ 
      
      return fetch(`http://localhost:8080/events/`, {
@@ -208,7 +193,7 @@ return (
             </Container>
                 <Container>
                                     <Segment>
-                                        <MapComponent viewEventDetails={viewEventDetails} events={events} eventDetails={eventDetails} newEvent={addEventDetails}/>
+                                        <MapComponent viewEventDetails={viewEventDetails} events={events} eventDetails={eventDetails} />
                                     </Segment>
                 </Container><br></br>
                 <Container >
