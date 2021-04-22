@@ -4,7 +4,6 @@ import TimelinePage from "../components/TimelinePage";
 import MapComponent from "../components/MapComponent";
 import {useEffect, useState} from "react";
 import "./TimeLineContainer.css";
-import EventContainer from "../components/EventContainer";
 import EventForm from "../components/EventForm";
 import LocationForm from "../components/LocationForm";
 import PersonForm from "../components/PersonForm";
@@ -175,7 +174,7 @@ return (
                             <Grid.Row columns={3}>
                                 <Grid.Column>
                                             <Header as='h3'>New Location</Header>
-                                            <LocationForm locationDetails={addLocationDetails} setLocations={setLocations}/>                             
+                                            <LocationForm locationDetails={addLocationDetails} />                             
                                 </Grid.Column>
                                 <Grid.Column>                   
                                             <Header as='h3'>New Event</Header>
@@ -183,7 +182,7 @@ return (
                                 </Grid.Column>
                                 <Grid.Column>
                                             <Header as='h3'>New Participant</Header>
-                                            <PersonForm persons={persons} events={events} personDetails={addPersonDetails} />                     
+                                            <PersonForm events={events} personDetails={addPersonDetails} />                     
                                 </Grid.Column>
                             </Grid.Row>                      
                             </Grid>

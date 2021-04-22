@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import { Input, Select, Dropdown } from 'semantic-ui-react';
 
-const PersonForm  = ({persons, events, personDetails}) => {
+const PersonForm  = ({ events, personDetails}) => {
 
 const [name, setName] = useState("");
 const [nationality, setNationality] = useState("");

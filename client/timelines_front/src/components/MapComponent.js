@@ -5,6 +5,8 @@ import "../containers/TimeLineContainer.css";
 import L from 'leaflet';
 import {Segment, Header, Grid} from 'semantic-ui-react';
 import { MapContainer, TileLayer, Marker, Popup, LayersControl} from 'react-leaflet';
+import ReactSlider from 'react-slider'
+import ReactDOM from 'react-dom';
 
 const MapComponent = ({events, viewEventDetails, eventDetails}) => {
 
@@ -32,6 +34,19 @@ const MapComponent = ({events, viewEventDetails, eventDetails}) => {
               </Marker>
             )
         })
+
+        // const OverlayComponent = () => {
+        //     events.map(slideEvent=>{
+        //     return ReactDOM.createPortal(
+        //         <ReactSlider
+        //             className="horizontal-slider"
+        //             thumbClassName="example-thumb"
+        //             trackClassName="example-track"
+        //             renderThumb={(props, state) => <div {...props}>{slideEvent.name}</div>}
+        //         />
+        //     );
+        //     })
+        //  };
 
 
         const renderEventDetails = () => {
@@ -69,6 +84,9 @@ const MapComponent = ({events, viewEventDetails, eventDetails}) => {
                     </LayersControl.BaseLayer>
                     <LayersControl.Overlay checked name="markers">
                             {eventMarker}
+                    </LayersControl.Overlay>
+                    <LayersControl.Overlay checked name='slider'>
+                        {/* {OverlayComponent()} */}
                     </LayersControl.Overlay>
                 </LayersControl>
             </MapContainer>
